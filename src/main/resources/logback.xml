@@ -1,0 +1,40 @@
+<configuration>
+
+    <appender name="ConsoleInfo" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%msg%n</pattern>
+            <!--<target>System.out</target>-->
+            <!--<level>INFO</level>-->
+        </encoder>
+    </appender>
+
+    <appender name="file" class="ch.qos.logback.core.FileAppender">
+        <file>/tmp/snippets.log</file>
+        <encoder>
+            <pattern>[%date{dd MMM yyyy;HH:mm:ss.SSS,UTC}] - [%3thread] %level [%logger{0}:%line] - %msg%n%ex{1}
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!--<appender name="ConsoleDebug" class="ch.qos.logback.core.ConsoleAppender">-->
+    <!--<encoder>-->
+    <!--<pattern>%date{HH:mm:ss} - %logger %level [%file:%line] - %msg%n%ex{1}</pattern>-->
+    <!--<target>System.out</target>-->
+    <!--<level>DEBUG</level>-->
+    <!--</encoder>-->
+    <!--</appender>-->
+
+    <!--<appender name="file" class="ch.qos.logback.core.FileAppender">-->
+    <!--<file>/tmp/snippets.log</file>-->
+    <!--<encoder>-->
+    <!--<pattern>[%date{dd MMM yyyy;HH:mm:ss.SSS,UTC}] - [%3thread] %level [%logger{0}:%line] - %msg%n%ex{1}-->
+    <!--</pattern>-->
+    <!--</encoder>-->
+    <!--</appender>-->
+
+    <root level="INFO">
+        <!--<appender-ref ref="ConsoleDebug"/>-->
+        <appender-ref ref="ConsoleInfo"/>
+    </root>
+
+</configuration>
